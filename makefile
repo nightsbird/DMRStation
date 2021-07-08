@@ -1,11 +1,10 @@
-
 RM := rm -rf
 
 
-CC = arm-linux-gnueabihf-gcc -static -g -O2 -std=gnu99
+CC = gcc
 
 OBJ_DIR = Obj
-CFLAGS = -Wall -o `pkg-config --cflags gtk+-3.0 libcrypto`
+CFLAGS = -Wall -o -g -O2 `pkg-config --cflags gtk+-3.0 libcrypto`
 PACKAGE = `pkg-config --cflags --libs gtk+-3.0 libcrypto`
 LIBS = `pkg-config --libs gtk+-3.0 libcrypto` -lpulse -lpulse-mainloop-glib
 LDFLAGS=`pkg-config --libs gtk+-3.0`
